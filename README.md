@@ -14,3 +14,4 @@ Outstanding issues:
 - fix styling on add new visitor modal
 - add controller in node api
 - more comprehensive filter and search functionality on checkin ui 
+- front end and back end validation

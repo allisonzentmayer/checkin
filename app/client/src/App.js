@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 // import logo from './logo.svg';
 import './App.scss';
-import { VisitorList } from './VisitorList.jsx';
-import { AddVisitorModal } from './AddVisitorModal.jsx';
+import { VisitorList } from './components/VisitorList.jsx';
+import { AddVisitorModal } from './components/AddVisitorModal.jsx';
 
 const apiUrl = 'http://localhost:8000';  
 

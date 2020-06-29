@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const db = require('./db/queries')
-const messageService = require('./services/messageService');
 
 const port = 8000;
 
