@@ -2,9 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-
-require('./app/routes')(app, {});
-require('./api/routes')(app, {});
 const db = require('./db/queries')
 const messageService = require('./services/messageService');
 
