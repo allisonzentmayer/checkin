@@ -18,10 +18,10 @@ Use the following details to create a local postgres database with a table calle
 
 
 
-Outstanding issues:
+Outstanding stories:
 
-- acceptance testing
-- fix styling on add new visitor modal
-- add controller in node api
+- more comprehensive unit and acceptance tests
+- update styling on add new visitor modal
+- add controllers in node api
 - more comprehensive filter and search functionality on checkin ui 
-- front end and back end validation
+- front end and back end data validation
