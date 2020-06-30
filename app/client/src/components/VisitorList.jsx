@@ -3,6 +3,14 @@ import moment from 'moment';
 import { SignoutButton } from './SignoutButton.jsx';
 
 export class VisitorList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      filterBySignedOut: false,
+    };
+    this.filterBySignedOut = this.filterBySignedOut.bind(this);
+  }
+
   visitorRow(visitor) {
     let name = `${visitor.first_name} ${visitor.last_name}`;
     let signedOutDate = moment(visitor.signed_out).format('MMMM Do YYYY, h:mm:ss a');
@@ -16,11 +24,21 @@ export class VisitorList extends React.Component {
     );
   }
 
-  render() {
-    let visitorsList = this.props.visitors.map((visitor) => {
+  visitorsList(){
+    let visitors = this.props.visitors;
+    if (this.state.filterBySignedOut) {
+      visitors = visitors.filter((visitor) => visitor.signed_out)
+    }
+    return visitors.map((visitor) => {
       return this.visitorRow(visitor);
     });
+  }
 
+  filterBySignedOut(event) {
+    this.setState({filterBySignedOut: event.target.checked});
+  }
+
+  render() {
     return (
       <div className="flex-grow h-screen overflow-y-scroll">
     
@@ -33,10 +51,11 @@ export class VisitorList extends React.Component {
                     <th className="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Name</th>
                     <th className="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Notes</th>
                     <th className="text-sm font-semibold text-grey-darker p-1 bg-grey-lightest">Signed out</th>
+                    <input type="checkbox" value="signedOut" onChange={this.filterBySignedOut}></input>
                   </tr>
                 </thead>
                 <tbody className="align-baseline">
-                  {visitorsList}
+                  {this.visitorsList()}
                 </tbody>
               </table>
           </div>
