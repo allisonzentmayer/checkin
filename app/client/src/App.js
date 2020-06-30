@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 // import logo from './logo.svg';
 import './App.scss';
-import { VisitorList } from './components/VisitorList.jsx';
-import { AddVisitorModal } from './components/AddVisitorModal.jsx';
+import VisitorList from './components/VisitorList.jsx';
+import AddVisitorModal from './components/AddVisitorModal.jsx';
 
 const apiUrl = 'http://localhost:8000';  
 
-export class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +57,6 @@ export class App extends React.Component {
     <div className="container mx-auto mt-12 p-8 border  min-h-screen max-w-3xl">
       <div className="clearfix">
         <button className="btn  btn--brand float-right ml-2" onClick={this.showModal}><i className="fas fa-user p-r-15"></i>New visitor</button>
-        {/* <input type="text" class="p-2 text-sm border float-right max-w-xs w-full" placeholder="Search"/> */}
         <img src="https://dashboard.envoy.com/assets/images/logo-small-red-ba0cf4a025dd5296cf6e002e28ad38be.svg" alt="Envoy Logo" width="31" className="py3 block"/>
       </div>
       <p className="page-title" >Welcome to {this.state.companyName}!</p>
@@ -66,5 +65,3 @@ export class App extends React.Component {
     </div>
   )};
 }
-
-export default App;

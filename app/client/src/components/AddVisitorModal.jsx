@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const apiUrl = 'http://localhost:8000';  
 
-export class AddVisitorModal extends React.Component {
+export default class AddVisitorModal extends React.Component {
   constructor(props) {
       super(props)
       this.state = {

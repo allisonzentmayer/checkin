@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
-import { SignoutButton } from './SignoutButton.jsx';
+import SignoutButton from './SignoutButton.jsx';
 
-export class VisitorList extends React.Component {
+export default class VisitorList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class SignoutButton extends React.Component {
+export default class SignoutButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
