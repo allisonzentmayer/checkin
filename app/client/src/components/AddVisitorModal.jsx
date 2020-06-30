@@ -26,10 +26,8 @@ export class AddVisitorModal extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.formValues);
     axios.post(`${apiUrl}/entries`, this.state.formValues)
     .then((res) => {
-    console.log(res);
     this.props.handleClose();
     }, (error) => { console.log(error) });
   }
