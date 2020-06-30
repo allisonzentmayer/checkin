@@ -47,7 +47,9 @@ export class App extends React.Component {
 
   handleClose(shouldGetVisitors = false) {
     this.setState({shouldShowModal: false});
-    this.getVisitors();
+    if (shouldGetVisitors) {
+      this.getVisitors();
+    }
   }
 
   render() {
